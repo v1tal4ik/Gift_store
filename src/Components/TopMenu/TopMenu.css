@@ -1,0 +1,58 @@
+.top-menu{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid #c9c9c9;
+    background: #ffffff;
+}
+
+/*****DATE************/
+.option-block label{
+    text-align: center;
+    text-transform: uppercase;
+    margin-right: 10px;
+}
+
+[type='date']{
+    background: url('./img/calendar.png');
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+    background-position: right;
+}
+[type='date']::-webkit-inner-spin-button{
+    display: none;
+}
+[type=date]::-webkit-calendar-picker-indicator{
+    opacity:0;
+}
+
+.date-inp{
+    padding: 5px 5px;
+    border: 1px solid #c9c9c9;
+    width: 160px;
+    margin-right: 15px;
+}
+
+/**********SEARCH***************/
+.serch-inp{
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 1px solid #c9c9c9;
+    margin-right: 10px;
+}
+
+
+/*********Button************/
+.top-btn{
+    padding: 7px 15px;
+    text-transform: uppercase;
+    background: #6ea9f6;
+    border:none;
+    border-radius: 5px;
+    color:#fff;
+}
+
+.top-btn:hover{
+    cursor: pointer;
+}

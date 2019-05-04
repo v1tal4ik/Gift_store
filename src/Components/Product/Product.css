@@ -1,0 +1,32 @@
+.shop-item{
+    width: 25%;
+    margin: 20px 0;
+    padding: 20px;
+    text-align: center;
+    border:1px solid #c9c9c9;
+    border-radius: 20px;
+}
+
+.wait{
+    cursor: wait !important;
+}
+
+.shop-item-img{
+    width:190px;
+    height: 160px;
+}
+
+.shop-item-name{
+    text-transform: uppercase;
+}
+
+.price-item{
+    margin-left: 20px;
+}
+
+
+.modal-buy{
+    text-align:center;
+    margin-top: 25%;
+    font-size: 22px;
+}
