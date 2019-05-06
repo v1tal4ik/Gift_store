@@ -24,15 +24,14 @@ export const getProduct = ()=>{
  }
 
  export async function setBuy(year,month,day,name,img,price){
-    //console.log('work',year,month,day,name,img,price);
     let order = {year,month,day,name,img,price};
     return fetch('/order',{
        method:'POST',
        mode:'cors',
        headers:{
-          "Content-type":"text/json; charset=UTF8"
+          "Content-type":"text/plain; charset=UTF8"
        },
-       body:order
+       body:JSON.stringify(order)
     })
     .then(response=>response.json())
     .then((response)=>response)

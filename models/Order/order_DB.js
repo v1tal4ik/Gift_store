@@ -2,7 +2,9 @@ const Order = require('./orderSchema');
 
 
 module.exports.saveNewOrder = function (name,img,price,day,month,year) {
-    const one = new Order({
+    const id = Math.floor(Math.random() * 1000000);
+    const order = new Order({
+        id:id,
         name:name,
         img:img,
         price:price,
@@ -10,5 +12,5 @@ module.exports.saveNewOrder = function (name,img,price,day,month,year) {
         month:month,
         year:year
     });
-    return one.save();
+    return order.save();
 };
