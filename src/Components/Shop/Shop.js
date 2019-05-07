@@ -8,6 +8,7 @@ import {getValue, getSymbol} from '../../modules/currency/reducer';
 import {getInputValue} from '../../modules/input/reducer';
 import Preloader from '../Preloader/Preloader';
 import './Shop.css';
+import './Preloader.css';
 
 class Store extends Component {
   componentDidMount(){

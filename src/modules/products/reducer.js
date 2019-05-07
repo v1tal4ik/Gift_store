@@ -6,19 +6,31 @@ import {
     fetchProductFailure,
     fetchOrderRequest,
     fetchOrderSuccess,
-    fetchOrderFailure
+    fetchOrderFailure,
+    fetchFilterOrderRequest,
+    fetchFilterOrderSuccess,
+    fetchFilterOrderFailure,
+    fetchDeleteOrderRequest,
+    fetchDeleteOrderSuccess,
+    fetchDeleteOrderFailure
     } from './actions';
 
 
 const isLoading = handleActions({
-    [fetchProductRequest] : ()=> true,
-    [fetchOrderRequest] : ()=> true,
+    [fetchProductRequest]     : ()=> true,
+    [fetchOrderRequest]       : ()=> true,
+    [fetchFilterOrderRequest] : ()=> true,
+    [fetchDeleteOrderRequest] : ()=> true,
 
-    [fetchProductSuccess] : ()=> false,
-    [fetchOrderSuccess] : ()=> false,
+    [fetchProductSuccess]     : ()=> false,
+    [fetchOrderSuccess]       : ()=> false,
+    [fetchFilterOrderSuccess] : ()=> false,
+    [fetchDeleteOrderSuccess] : ()=> false,
 
-    [fetchProductFailure] : ()=> false,
-    [fetchOrderFailure] : ()=> false,
+    [fetchProductFailure]     : ()=> false,
+    [fetchOrderFailure]       : ()=> false,
+    [fetchFilterOrderFailure] : ()=> false,
+    [fetchDeleteOrderFailure] : ()=> false,
 },false);
 
 const products = handleActions({
@@ -28,9 +40,17 @@ const products = handleActions({
 },[])
 
 const order = handleActions({
-    [fetchOrderRequest] : ()=>[],
-    [fetchOrderSuccess] : (_state,action)=>action.payload,
-    [fetchOrderFailure] : (_state,action)=>action.payload,
+    [fetchOrderRequest]       : ()=>[],
+    [fetchFilterOrderRequest] : ()=>[],
+    [fetchDeleteOrderRequest] : ()=>[],
+
+    [fetchOrderSuccess]       : (_state,action)=>action.payload,
+    [fetchFilterOrderSuccess] : (_state,action)=>action.payload,
+    [fetchDeleteOrderSuccess] : (_state,action)=>action.payload,
+
+    [fetchOrderFailure]       : (_state,action)=>action.payload,
+    [fetchFilterOrderFailure] : (_state,action)=>action.payload,
+    [fetchDeleteOrderFailure] : (_state,action)=>action.payload,
 },[])
 
 

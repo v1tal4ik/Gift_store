@@ -1,10 +1,5 @@
 import React,{Component} from 'react';
-import Rodal from 'rodal';
-import { connect } from 'react-redux';
-import {getCurrentDate} from '../../modules/date/reducer';
-import {setBuy} from '../../api';
 import './OrderItem.css';
-import 'rodal/lib/rodal.css';
 
 class OrderItem extends Component {
   

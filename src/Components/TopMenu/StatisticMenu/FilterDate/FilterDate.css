@@ -1,9 +1,14 @@
 .date-select-block{
-    width: 65px;
+    width: 70px;
+    margin-right: 10px;
+}
+.date-select-block:focus, .date-select-block-month:focus{
+    outline: none;
+    border: none;
+}
+
+.date-select-block-month{
+    width: 90px;
     margin-right: 10px;
 }
 
-.date-select-block-year{
-    width: 75px;
-    margin-right: 10px;
-}

@@ -14,43 +14,44 @@ const month =[];
 const year = [];
 
 for(let d=1;d<32;d++){
-  day[d]=d;
+  day[0]='day';
+  (d<10) ? (day[d]='0'+ d): (day[d]= d);
 }
 for(let m=1; m<13 ;m++){
+  month[0]='month';
     (m<10) ? (month[m]='0'+ m): (month[m]= m);
-  
 }
-
 for(let i=1, y=2015;i<10; i++ , y++ ){
+  year[0]='year';
   year[i]=y;
 }
 
 class FilterDate extends Component {
   render(){
+    const {changeDate} = this.props;
     return (
       <>
       <Select 
                 optionFilterProp="children"
                 className = 'date-select-block'
                 defaultValue = 'day'
-                maxTagCount={2}
-                onChange={this.handleChange}
+                onChange={(e)=>changeDate(e,'day')}
                 >
                 {day.map(index=><Option key={index} value={index} >{index}</Option>)}
       </Select>
       <Select 
                 optionFilterProp="children"
-                className = 'date-select-block'
+                className = 'date-select-block-month'
                 defaultValue = 'month'
-                onChange={this.handleChange}
+                onChange={(e)=>changeDate(e,'month')}
                 >
                 {month.map(index=><Option key={index} value={index} >{index}</Option>)}
       </Select>
       <Select 
                 optionFilterProp="children"
-                className = 'date-select-block-year'
+                className = 'date-select-block'
                 defaultValue = 'year'
-                onChange={this.handleChange}
+                onChange={(e)=>changeDate(e,'year')}
                 >
                 {year.map(index=><Option key={index} value={index} >{index}</Option>)}
       </Select>

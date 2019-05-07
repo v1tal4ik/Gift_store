@@ -40,8 +40,33 @@ export const getProduct = ()=>{
 
 
  export async function getALLOrder(){
-  console.log('work getALLOrder');
   return fetch('/allOrder',{method:'GET'})
   .then(response=>response.json())
   .then(result=>result);
 }
+
+export async function getFilterOrder(params){
+   return fetch('/filterOrder',{
+      method:"POST",
+      mode:'cors',
+       headers:{
+          "Content-type":"text/plain; charset=UTF8"
+       },
+       body:JSON.stringify(params)
+   })
+   .then(response=>response.json())
+   .then(result=>result);
+ }
+ 
+ export async function getDeleteOrder(params){
+   return fetch('/deleteOrder',{
+      method:"POST",
+      mode:'cors',
+       headers:{
+          "Content-type":"text/plain; charset=UTF8"
+       },
+       body:JSON.stringify(params)
+   })
+   .then(response=>response.json())
+   .then(result=>result);
+ }
