@@ -1,10 +1,18 @@
 import { takeEvery, put, call, fork } from 'redux-saga/effects';
-import {fetchProductRequest,fetchProductSuccess,fetchProductFailure} from './actions';
-import {getProduct} from '../../api';
+import {
+  fetchProductRequest,
+  fetchProductSuccess,
+  fetchProductFailure,
+  fetchOrderRequest,
+  fetchOrderSuccess,
+  fetchOrderFailure,
+  } from './actions';
+import {getProduct,getALLOrder} from '../../api';
 
 
-function* fetchFollowersWatcher() {
+function* fetchProductsWatcher() {
   yield takeEvery(fetchProductRequest, fetchProductFlow);
+  yield takeEvery(fetchOrderRequest, fetchOrderFlow);
 }
 
 export function* fetchProductFlow(action) {
@@ -16,6 +24,15 @@ export function* fetchProductFlow(action) {
   }
 }
 
+export function* fetchOrderFlow(action) {
+  try{
+    const result = yield call(getALLOrder,action.payload);
+    yield put(fetchOrderSuccess(result));
+  } catch (error){
+    yield put(fetchOrderFailure(error));
+  }
+}
+
 export default function*() {
-  yield fork(fetchFollowersWatcher);
+  yield fork(fetchProductsWatcher);
 }

@@ -6,6 +6,7 @@ import {fetchCurrencyRequest} from '../../modules/currency/actions';
 import {getProduct, getIsLoading} from '../../modules/products/reducer';
 import {getValue, getSymbol} from '../../modules/currency/reducer';
 import {getInputValue} from '../../modules/input/reducer';
+import Preloader from '../Preloader/Preloader';
 import './Shop.css';
 
 class Store extends Component {
@@ -17,24 +18,7 @@ class Store extends Component {
   
   render(){
     const {products,isLoading,currencyValue,currencySymbol,inputValue} = this.props;
-    if(isLoading){
-      return (
-        <div id='loader-page' className='loader-page'>
-          <div id="fountainTextG">
-              <div id="fountainTextG_1" className="fountainTextG">l</div>
-              <div id="fountainTextG_2" className="fountainTextG">o</div>
-              <div id="fountainTextG_3" className="fountainTextG">a</div>
-              <div id="fountainTextG_4" className="fountainTextG">d</div>
-              <div id="fountainTextG_5" className="fountainTextG">i</div>
-              <div id="fountainTextG_6" className="fountainTextG">n</div>
-              <div id="fountainTextG_7" className="fountainTextG">g</div>
-              <div id="fountainTextG_8" className="fountainTextG">.</div>
-              <div id="fountainTextG_9" className="fountainTextG">.</div>
-              <div id="fountainTextG_10" className="fountainTextG">.</div>
-          </div>
-        </div>
-      )
-    }
+    if(isLoading){return <Preloader />}
     if(products.length>0){
        return <div id='shop' className='shop'>
         {

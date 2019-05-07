@@ -1,0 +1,14 @@
+.profit-block{
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%,0%);
+    width: 100%;
+    height: 80px;
+    font-size: 22px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #fff;
+    background: rgb(61, 91, 226);
+    border-top: 1px solid rgb(0, 76, 255);
+}

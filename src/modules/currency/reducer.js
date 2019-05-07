@@ -5,7 +5,8 @@ import {
     fetchCurrencySuccess,
     fetchCurrencyFailure,
     changeCurrencyValue,
-    changeCurrencySymbol
+    changeCurrencySymbol,
+    changeCurrencyName
 } from './actions';
 
 
@@ -23,7 +24,12 @@ const currencySymbol = handleActions({
     [changeCurrencySymbol] : (_state,action)=>action.payload
 },'€')
 
+const currencyName = handleActions({
+    [changeCurrencyName] : (_state,action)=>action.payload
+},'EURO')
+
 export default combineReducers({
+    currencyName,
     currencyValue,
     currencySymbol,
     currencyCourse
@@ -32,6 +38,7 @@ export default combineReducers({
 
 export const getValue=(state)=>state.currency.currencyValue;
 export const getSymbol=(state)=>state.currency.currencySymbol;
+export const getName=(state)=>state.currency.currencyName;
 
 export const getEuro=(state)=>state.currency.currencyCourse.EUR;
 export const getUSD=(state)=>state.currency.currencyCourse.USD;

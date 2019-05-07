@@ -1,0 +1,21 @@
+.statistic-list-item{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: no-wrap;
+}
+.table-item{
+    width: 17.63%;
+    height: 40px;
+    padding: 15px;
+    border-bottom: 1px solid #c9c9c9;
+    border-right: 1px solid #c9c9c9;
+    text-transform: uppercase;
+    background: #fff;
+}
+
+.img-table{
+    padding: 0;
+    width: 46px;
+}

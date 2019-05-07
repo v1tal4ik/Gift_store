@@ -14,3 +14,8 @@ module.exports.saveNewOrder = function (name,img,price,day,month,year) {
     });
     return order.save();
 };
+
+module.exports.getAllOrder = function () {
+    return Order.find({});
+};
+

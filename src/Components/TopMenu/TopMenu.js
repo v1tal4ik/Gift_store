@@ -1,42 +1,31 @@
-import React,{Component} from 'react';
-import Selects from '../Select';
-import { connect } from 'react-redux';
-import {changeCurrentDate} from '../../modules/date/actions';
-import {changeInputValue} from '../../modules/input/actions';
-import {getCurrentDate} from '../../modules/date/reducer';
-import './TopMenu.css';
+import React ,{ Component }from 'react';
+import ShopMenu from './ShopMenu';
+import StatisticMenu from './StatisticMenu';
 
 
+class TopMenu extends Component{
+    state={
+        mode:'shop'
+    }
 
-class TopMenu extends Component {
-  handleChangeDate=(e)=>{
-    const {changeCurrentDate} = this.props;
-    changeCurrentDate(e.target.value);
-  }
+    handleChangeMod=()=>{
+        this.state.mode==='shop'? this.setState({mode:'statistic'}):this.setState({mode:'shop'});
+    }
 
-  handleSearch=(e)=>{
-    const {changeInputValue}= this.props;
-    changeInputValue(e.target.value);
-  }
 
-  render(){
-    return (
-      <div className="top-menu">
-          <div className='option-block'>
-              <label>Current date:</label>
-              <input  type='date' className='date-inp' value={this.props.currentDate} onChange={this.handleChangeDate}/>
-              <Selects />
-          </div>
-          <div className='search-block'>
-            <input type='text' className='serch-inp' placeholder='name...' onChange={this.handleSearch}/>
-            <button className='top-btn' >Search</button>
-          </div>
-          <button className='top-btn' >View statistic</button>
-      </div>
-    );
-  }
+    render(){
+        const {mode} = this.state;
+        if(mode === 'shop'){
+            return (
+                <ShopMenu changeMod={this.handleChangeMod}/>
+            )
+        }
+        if(mode === 'statistic'){
+            return (
+                <StatisticMenu changeMod={this.handleChangeMod}/>
+            )
+        }
+    }
 }
 
-export default connect(state=>({
-  currentDate:getCurrentDate(state)
-}),{changeCurrentDate,changeInputValue})(TopMenu);
+export default TopMenu;

@@ -37,3 +37,11 @@ export const getProduct = ()=>{
     .then((response)=>response)
     .catch(err=>'Sorry, there was an error:(')  
  }
+
+
+ export async function getALLOrder(){
+  console.log('work getALLOrder');
+  return fetch('/allOrder',{method:'GET'})
+  .then(response=>response.json())
+  .then(result=>result);
+}
