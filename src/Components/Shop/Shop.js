@@ -1,4 +1,5 @@
 import React,{Component} from 'react';
+import PropTypes from 'prop-types';
 import Product from '../Product';
 import { connect } from 'react-redux';
 import {fetchProductRequest} from '../../modules/products/actions';
@@ -10,7 +11,7 @@ import Preloader from '../Preloader/Preloader';
 import './Shop.css';
 import './Preloader.css';
 
-class Store extends Component {
+class Shop extends Component {
   componentDidMount(){
     const{fetchProductRequest,fetchCurrencyRequest}= this.props;
     fetchProductRequest();
@@ -31,7 +32,7 @@ class Store extends Component {
             }else{
               return <Product key={item.id} name={item.name} img={item.img} price={item.price} currencyValue={currencyValue} currencySymbol={currencySymbol}/>
             }
-            return null;
+            return null
           })
         }
       </div>
@@ -40,10 +41,18 @@ class Store extends Component {
   }
 }
 
+Shop.propTypes ={
+  products:PropTypes.array.isRequired,
+  isLoading:PropTypes.bool.isRequired,
+  currencyValue:PropTypes.number.isRequired,
+  currencySymbol:PropTypes.string.isRequired,
+  inputValue:PropTypes.string.isRequired
+};
+
 export default connect(state => ({
   isLoading: getIsLoading(state),
   products: getProduct(state),
   currencyValue:getValue(state),
   currencySymbol:getSymbol(state),
   inputValue:getInputValue(state)
-}),{fetchProductRequest,fetchCurrencyRequest})(Store);
+}),{fetchProductRequest,fetchCurrencyRequest})(Shop);

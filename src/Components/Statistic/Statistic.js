@@ -1,4 +1,5 @@
 import React,{Component} from 'react';
+import PropTypes from 'prop-types';
 import Preloader from '../Preloader/Preloader';
 import OrderItem from '../OrderItem';
 import Profit from '../Profit';
@@ -6,7 +7,6 @@ import { connect } from 'react-redux';
 import {fetchOrderRequest} from '../../modules/products/actions';
 import {getOrder, getIsLoading} from '../../modules/products/reducer';
 import {getValue, getSymbol} from '../../modules/currency/reducer';
-import {getInputValue} from '../../modules/input/reducer';
 import './Statistic.css';
 
 
@@ -62,11 +62,16 @@ class Statistic extends Component {
   }
 }
 
+Statistic.propTypes ={
+  isLoading:PropTypes.bool.isRequired,
+  currencyValue:PropTypes.number.isRequired,
+  currencySymbol:PropTypes.string.isRequired,
+};
+
 export default connect(state => ({
     isLoading: getIsLoading(state),
     currencyValue:getValue(state),
     currencySymbol:getSymbol(state),
-    inputValue:getInputValue(state),
     orders:getOrder(state)
   }),{fetchOrderRequest})(Statistic);
 

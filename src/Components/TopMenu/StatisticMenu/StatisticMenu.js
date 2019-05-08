@@ -1,4 +1,5 @@
 import React,{Component} from 'react';
+import PropTypes from 'prop-types';
 import {Link} from 'react-router-dom';
 import Selects from '../Select';
 import Search from '../Search';
@@ -42,12 +43,17 @@ class StatisticMenu extends Component {
           <button className='top-btn' onClick={this.handleFilter}>Filter</button>
           </div>
           <Selects />
-          <button className='top-btn clear' onClick={this.handleClear}>Clear All({orders.length})</button>
+          <Search />
+          <button className='top-btn clear' onClick={this.handleClear}>Clear All ({orders.length})</button>
           <Link to='/'><button className='top-btn' onClick={changeMod}>Shop</button></Link>
       </div>
     );
   }
 }
+
+StatisticMenu.propTypes ={
+  changeMod:PropTypes.func.isRequired
+};
 
 export default connect(state=>({
   orders:getOrder(state)

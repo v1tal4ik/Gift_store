@@ -1,4 +1,5 @@
 import React,{Component} from 'react';
+import PropTypes from 'prop-types';
 import Rodal from 'rodal';
 import { connect } from 'react-redux';
 import {getCurrentDate} from '../../modules/date/reducer';
@@ -18,7 +19,7 @@ class Product extends Component {
     this.addClass();
     let result = await setBuy(year,month,day,name,img,price);
     this.removeClass();
-    this.setState({visible:true,message:result})
+    this.setState({visible:true,message:result});
   }
 
   addClass=()=>{
@@ -55,6 +56,15 @@ class Product extends Component {
     );
   }
 }
+
+Product.propTypes = {
+  name:PropTypes.string.isRequired,
+  img:PropTypes.string.isRequired,
+  price:PropTypes.number.isRequired,
+  currencyValue:PropTypes.number.isRequired,
+  currencySymbol:PropTypes.string.isRequired
+}
+
 
 export default connect(state=>({
   currentDate:getCurrentDate(state)

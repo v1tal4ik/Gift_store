@@ -4,7 +4,7 @@ export const getProduct = ()=>{
  }
 
  export const getCourse = ()=>{
-    /*return fetch(`http://data.fixer.io/api/latest?access_key=22e8c3c7c6b0166864f572f0aaf4f731`)
+    return fetch(`http://data.fixer.io/api/latest?access_key=22e8c3c7c6b0166864f572f0aaf4f731`)
     .then((response)=>response.json())
     .then(result=>{
        const {UAH,USD,EUR} = result.rates;
@@ -14,13 +14,7 @@ export const getProduct = ()=>{
           EUR:Math.round(EUR)
          }
        return obj;
-    });*/
-    let obj = {
-       UAH:30,
-       USD:1.5,
-       EUR:1
-    }
-    return obj;
+    });
  }
 
  export async function setBuy(year,month,day,name,img,price){

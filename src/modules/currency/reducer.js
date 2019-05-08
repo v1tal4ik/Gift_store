@@ -11,7 +11,7 @@ import {
 
 
 const currencyCourse = handleActions({
-    [fetchCurrencyRequest] : ()=>[],
+    [fetchCurrencyRequest] : ()=>{},
     [fetchCurrencySuccess] : (_state,action)=>action.payload,
     [fetchCurrencyFailure] : (_state,action)=>action.payload,
 },{})
