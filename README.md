@@ -56,6 +56,6 @@ The build is minified and the filenames include the hashes.<br>
 Your app is ready to be deployed!
 
   
- ##P.S
+ ## P.S
  I write test only for reducers and OrderItem Component, but each component has `PropTypes`, it also protected against errors.
  
