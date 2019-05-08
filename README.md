@@ -29,9 +29,10 @@ Its a main page of SPA. On this page we can look `SHOP MENU` and some `PRODUCTS`
   * if we choose only `YEAR` - the data will be filtered only for `YEAR`. The same with `DAY` or `MONTH`.
   * if we choose `YEAR` and `DAY` - the data will be filtered only for this paramets.The same with any combination. It's `FULL FILTER`
   * In order to get `all orders` we shoud choose field `day` `month` `year`in a parametrs.
-  REMEMBER
-- `FILTER` - we shoud click this button after choosing a date.  
-  
+- `CLEAR ALL` - this button deleting all orders which rendering at the moment, thier count is dispayed.
+   * this button have a bug, which fixing soon. After deleting rendering all orders without filtering despite in filter value.  
+- `FILTER` - we shoud click this button after choosing a date. Only this way the date will be filtered REMEMBER IT!!! 
+- `SHOP` - with this button we can load another page(`SHOP`).  
   
  
  
