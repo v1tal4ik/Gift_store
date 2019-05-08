@@ -27,7 +27,10 @@ Its a main page of SPA. On this page we can look `SHOP MENU` and some `PRODUCTS`
 
 - `DAY MONTH YEAR`  - its are inputs for which we can choose date for `FILTER`. We can fill all fields or each separately.
   * if we choose only `YEAR` - the data will be filtered only for `YEAR`. The same with `DAY` or `MONTH`.
-  * if we choose `YEAR` and `DAY` - the data will be filtered only for this paramets.The same with any combination. ###It's FULL FILTER
+  * if we choose `YEAR` and `DAY` - the data will be filtered only for this paramets.The same with any combination. It's `FULL FILTER`
+  * In order to get `all orders` we shoud choose field `day` `month` `year`in a parametrs.
+  REMEMBER
+- `FILTER` - we shoud click this button after choosing a date.  
   
   
  
