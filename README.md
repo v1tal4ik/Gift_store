@@ -15,7 +15,19 @@ Its a main page of SPA. On this page we can look `SHOP MENU` and some `PRODUCTS`
 - We can use a `search input` in order to find some products.
 - `VIEW STATISTIC` - with this button we can load another page(`STATISTIC`).
 - `BUY` - with this button we can make orders.
-   * - if order has been success/failed, we receive a notification about it.
+   * if order has been success/failed, we receive a notification about it.
    
    
  ### About `STATISTIC`
+ 
+ In this page we can look `STATISTIC MENU` `LIST OF ORDERS` and `PROFIT`.
+ 
+ 
+ `STATISTIC MENU` has some buttons and inputs:
+
+- `DAY MONTH YEAR`  - its are inputs for which we can choose date for `FILTER`. We can fill all fields or each separately.
+  *
+  
+  
+ 
+ 
