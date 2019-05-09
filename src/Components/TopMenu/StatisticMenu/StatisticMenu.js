@@ -30,7 +30,6 @@ class StatisticMenu extends Component {
  handleClear=()=>{
    const {orders,fetchDeleteOrderRequest} =this.props;
    let removeOrderId = orders.map(item=>item.id);
-   console.log(removeOrderId);
    fetchDeleteOrderRequest(removeOrderId);
  }
 

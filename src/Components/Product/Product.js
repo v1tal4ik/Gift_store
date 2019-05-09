@@ -33,7 +33,7 @@ class Product extends Component {
   }
 
 
-    closeModalBuy=()=>{
+  closeModalBuy=()=>{
       this.setState({visible:false});
     }
 
