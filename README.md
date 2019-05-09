@@ -5,10 +5,14 @@
 
 ### Demo
 
-<b>LINK:</b> https://gift-store.herokuapp.com
+<b>Link:</b> https://gift-store.herokuapp.com
 
 
-<b>Expample</b>https://youtu.be/DYPUHlxTIhE
+<b>Expample:</b>  https://youtu.be/DYPUHlxTIhE
+
+
+
+
 
 
 
