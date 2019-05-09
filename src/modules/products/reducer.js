@@ -42,12 +42,15 @@ const products = handleActions({
 const order = handleActions({
     [fetchOrderRequest]       : ()=>[],
     [fetchFilterOrderRequest] : ()=>[],
+    [fetchDeleteOrderSuccess] : ()=>[],
 
     [fetchOrderSuccess]       : (_state,action)=>action.payload,
     [fetchFilterOrderSuccess] : (_state,action)=>action.payload,
+    [fetchDeleteOrderSuccess] : (_state,action)=>action.payload,
 
     [fetchOrderFailure]       : (_state,action)=>action.payload,
     [fetchFilterOrderFailure] : (_state,action)=>action.payload,
+    [fetchDeleteOrderFailure] : (_state,action)=>action.payload,
 },[])
 
 
